@@ -3,7 +3,14 @@
 import pandas as pd
 import joblib
 
-model_young = joblib.load("artifacts/model_young.joblib")
+import os
+import joblib
+
+# Get the absolute path of the model file
+model_path = os.path.join(os.path.dirname(__file__), "artifacts", "model_young.joblib")
+
+# Load the model
+model_young = joblib.load(model_path)
 model_rest = joblib.load("artifacts/model_rest.joblib")
 scaler_young = joblib.load("artifacts/scaler_young.joblib")
 scaler_rest = joblib.load("artifacts/scaler_rest.joblib")
